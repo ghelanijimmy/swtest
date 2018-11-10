@@ -21,8 +21,9 @@ $black: #000;
   padding: 0;
 }
 
-/******HEADER*******/
+
 header {
+  /****HEADER*******/
   background: $orange;
   .mainHead {
     display: grid;
@@ -37,6 +38,7 @@ header {
       grid-template: auto / 1fr;
       align-items: center;
     }
+    /******MAIN NAV********/
     .mainNav {
       display: grid;
       grid-template: auto / 1fr;
@@ -52,6 +54,7 @@ header {
       }
     }
   }
+  /*********SUBNAV UNDER MAIN*******/
   .mainSubNav {
     background-color: $lightWhite;
     -webkit-box-sizing: border-box;
@@ -70,6 +73,52 @@ header {
           width: 100%;
         }
       }
+    }
+  }
+}
+
+/********HERO*********/
+section.hero {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  background-image: url('https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .excursionBox {
+    flex-basis: 50%;
+    background-color: rgba($white, .9);
+    padding: 3% 5%;
+    h1 {
+      text-align: center;
+    }
+    .excursionSelect {
+      display: grid;
+      grid-template: auto / 1fr 1fr;
+      grid-gap: 20px 50px;
+      margin: 3%;
+      select {
+        border: none;
+        background: white;
+        border-radius: 0px;
+        color: gray;
+        height: 50px;
+      }
+    }
+    a {
+      text-align: center;
+      display: block;
+      padding: 2% 1%;
+      background-color: $orange;
+      color: white;
+      text-decoration: none;
+      margin: 5% auto 0;
+      width: 100px;
     }
   }
 }

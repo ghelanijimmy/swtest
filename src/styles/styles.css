@@ -4,9 +4,10 @@
   margin: 0;
   padding: 0; }
 
-/******HEADER*******/
 header {
-  background: #f36f21; }
+  /****HEADER*******/
+  background: #f36f21;
+  /*********SUBNAV UNDER MAIN*******/ }
   header .mainHead {
     display: grid;
     grid-template: auto / 1fr 1fr;
@@ -14,7 +15,8 @@ header {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 20px 10px; }
+    padding: 20px 10px;
+    /******MAIN NAV********/ }
     header .mainHead .logo {
       display: grid;
       grid-template: auto / 1fr;
@@ -46,3 +48,43 @@ header {
           padding: 5%;
           display: block;
           width: 100%; }
+
+/********HERO*********/
+section.hero {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  background-image: url("https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  section.hero .excursionBox {
+    flex-basis: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3% 5%; }
+    section.hero .excursionBox h1 {
+      text-align: center; }
+    section.hero .excursionBox .excursionSelect {
+      display: grid;
+      grid-template: auto / 1fr 1fr;
+      grid-gap: 20px 50px;
+      margin: 3%; }
+      section.hero .excursionBox .excursionSelect select {
+        border: none;
+        background: white;
+        border-radius: 0px;
+        color: gray;
+        height: 50px; }
+    section.hero .excursionBox a {
+      text-align: center;
+      display: block;
+      padding: 2% 1%;
+      background-color: #f36f21;
+      color: white;
+      text-decoration: none;
+      margin: 5% auto 0;
+      width: 100px; }
