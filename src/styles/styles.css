@@ -1,0 +1,48 @@
+/******COLORS*********/
+/****RESET******/
+* {
+  margin: 0;
+  padding: 0; }
+
+/******HEADER*******/
+header {
+  background: #f36f21; }
+  header .mainHead {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    justify-content: space-around;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px 10px; }
+    header .mainHead .logo {
+      display: grid;
+      grid-template: auto / 1fr;
+      align-items: center; }
+    header .mainHead .mainNav {
+      display: grid;
+      grid-template: auto / 1fr;
+      align-items: center; }
+      header .mainHead .mainNav ul {
+        display: grid;
+        grid-template: auto/repeat(5, 1fr); }
+        header .mainHead .mainNav ul li {
+          list-style: none;
+          color: #fff;
+          text-align: center; }
+  header .mainSubNav {
+    background-color: #f2f2f2;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    header .mainSubNav ul {
+      display: grid;
+      grid-template: auto/repeat(8, auto);
+      align-items: center; }
+      header .mainSubNav ul li {
+        list-style: none;
+        text-align: center; }
+        header .mainSubNav ul li input {
+          padding: 5%;
+          display: block;
+          width: 100%; }
