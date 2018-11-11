@@ -166,8 +166,26 @@ section.content {
     }
     .subCategories {
       display: grid;
-      grid-template: auto / 1fr 1fr 1fr;
+      grid-template: minmax(100px, auto) / 1fr 1fr 1fr;
       grid-gap: 20px;
+      .subCategory {
+        background-color: #ededed;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 5%;
+      }
     }
   }
+}
+
+
+
+/*******FOOTER**********/
+.footer {
+  background: $orange;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 150px;
+  margin-top: 30px;
 }

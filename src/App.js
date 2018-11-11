@@ -3,6 +3,7 @@ import Header from './components/header';
 import FetchInfo from './components/ajax';
 import {Route, HashRouter} from 'react-router-dom';
 import Excursion from './components/excursion';
+import Footer from './components/footer';
 
 import './styles/styles.css';
 
@@ -84,6 +85,7 @@ class App extends Component {
             </div>
             </div>
         </HashRouter>
+          <Footer/>
       </div>
     );
   }
