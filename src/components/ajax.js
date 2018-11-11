@@ -4,9 +4,6 @@ import ExcursionList from './excursionSelect';
 
 class FetchInfo extends Component {
 
-    constructor(props){
-        super(props);
-    }
 
     render(){
         return(

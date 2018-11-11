@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import {NavLink, HashRouter} from 'react-router-dom';
 
 class ExcursionList extends Component {
-    constructor(props){
-        super(props);
-
-    }
 
 
     render(){
@@ -13,7 +9,7 @@ class ExcursionList extends Component {
         const selectCountry = (options) => {
             return (
                 <select id={'countryName'} onChange={destinationSelect}>
-                    <option>--Select Country---</option>
+                    <option>--SELECT COUNTRY--</option>
                     {this.props.data.map((country, option) => (
                         <option key={country[options]}>{country[options]}</option>))}
                 </select>
@@ -25,7 +21,7 @@ class ExcursionList extends Component {
         const renderDestination = (values) => {
             this.props.data.filter(function(country){
                 if(country.countryName === values){
-                    console.log(country.destinations);
+                    // console.log(country.destinations);
 
                     document.getElementById('destination').innerHTML = "";
                     country.destinations.filter((destination, index) => {
@@ -60,14 +56,13 @@ class ExcursionList extends Component {
                     {selectCountry('countryName')}
 
                     <select id={'destination'}>
-                        <option>
-                            {'Select Country First'}
-                        </option>
+
                     </select>
 
                 </div>
                 <HashRouter>
                     <NavLink to="/excursion">GO</NavLink>
+
                 </HashRouter>
 
             </div>

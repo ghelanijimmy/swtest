@@ -86,5 +86,43 @@ section.hero {
       background-color: #f36f21;
       color: white;
       text-decoration: none;
-      margin: 5% auto 0;
+      margin: 15px auto 0;
       width: 100px; }
+
+/********EXCURSIONPAGE********/
+section.hero {
+  min-height: 300px; }
+  section.hero div h1, section.hero div p {
+    text-align: center;
+    color: #fff; }
+  section.hero div a {
+    text-align: center;
+    display: block;
+    padding: 2% 1%;
+    background-color: #f36f21;
+    color: white;
+    text-decoration: none;
+    margin: 15px auto 0;
+    width: 100px; }
+
+section.content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 100px; }
+  section.content .categoryTitle {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2%;
+    color: #f36f21; }
+  section.content #categories {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 20px; }
+    section.content #categories .category h3 {
+      padding: 25px 0;
+      color: #f36f21; }
+    section.content #categories .subCategories {
+      display: grid;
+      grid-template: auto / 1fr 1fr 1fr;
+      grid-gap: 20px; }
