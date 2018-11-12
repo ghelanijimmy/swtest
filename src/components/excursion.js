@@ -109,11 +109,9 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
-<<<<<<< HEAD
-                                                                                        <a className={'button'}>Learn More</a>
-=======
+
                                                                                         <p className={'button'}>Learn More</p>
->>>>>>> 43fdd622bde632decc83dd379628eb8a91cca833
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -133,11 +131,9 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
-<<<<<<< HEAD
-                                                                                        <a className={'button'}>Learn More</a>
-=======
+
                                                                                         <p className={'button'}>Learn More</p>
->>>>>>> 43fdd622bde632decc83dd379628eb8a91cca833
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
