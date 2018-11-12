@@ -1,6 +1,7 @@
 /******COLORS*********/
 /****RESET******/
 * {
+  font-family: 'PT Sans', sans-serif;
   margin: 0;
   padding: 0; }
   * .appContent {
@@ -12,6 +13,25 @@
       flex-wrap: wrap; }
       * .appContent > div > section.hero {
         flex-basis: 100%; }
+
+h1 {
+  font-size: 34px !important;
+  color: #007cc3 !important; }
+
+h2 {
+  font-size: 24px !important;
+  color: #007cc3 !important;
+  font-weight: bold; }
+
+h3 {
+  font-size: 24px !important;
+  color: #333333 !important;
+  font-weight: bold; }
+
+h4 {
+  font-size: 20px !important;
+  color: #007cc3 !important;
+  font-weight: bold; }
 
 header {
   /****HEADER*******/
@@ -106,7 +126,7 @@ section.hero div.excursionHeroBox {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  section.hero div.excursionHeroBox h1, section.hero div.excursionHeroBox p {
+  section.hero div.excursionHeroBox h3, section.hero div.excursionHeroBox p {
     text-align: center;
     color: #fff; }
   section.hero div.excursionHeroBox a {
@@ -147,7 +167,7 @@ section.content {
     grid-gap: 20px; }
     section.content #categories .category h2 {
       padding: 3%;
-      color: white;
+      color: white !important;
       background: #007cc3; }
     section.content #categories .subCategories {
       display: grid;
@@ -184,7 +204,7 @@ section.content {
             flex-basis: 100%;
             box-sizing: border-box;
             display: grid;
-            grid-template: minmax(440px, auto) minmax(100px, auto)/1fr;
+            grid-template: minmax(350px, auto) minmax(350px, auto)/1fr;
             grid-gap: 20px 20px; }
             section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionImage {
               -webkit-background-size: cover !important;
@@ -194,7 +214,11 @@ section.content {
               -webkit-box-sizing: border-box;
               -moz-box-sizing: border-box;
               box-sizing: border-box;
-              padding: 1% 2%; }
+              padding: 1% 2%;
+              display: grid;
+              grid-template: 1fr 2fr 1fr / 1fr;
+              text-align: left;
+              align-items: center; }
               section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent h3 {
                 margin-bottom: 15px;
                 color: #f36f21; }
@@ -207,7 +231,6 @@ section.content {
                 background-color: #f36f21;
                 color: white;
                 text-decoration: none;
-                margin: 15px auto 15px;
                 width: 100px; }
 
 /*******FOOTER**********/
