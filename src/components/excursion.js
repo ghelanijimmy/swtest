@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {HashRouter, NavLink, withRouter, Link, Redirect, Route} from 'react-router-dom';
-import FetchInfo from "./ajax";
+import {Link} from 'react-router-dom';
 
 
 
@@ -20,7 +19,7 @@ class Excursion extends Component {
 
     componentDidMount(){
 
-        console.log(this.props.destination);
+
         if(this.props.destination === undefined){
             fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.country)}/${encodeURIComponent(this.props.eDestination)}`)
                 .then(res => res.json())
@@ -32,13 +31,13 @@ class Excursion extends Component {
                     });
                 });
         }else {
-            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.destination.country)}/${encodeURIComponent(this.props.destination.destination)}`)
+            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.stateObj.destination.country)}/${encodeURIComponent(this.props.stateObj.destination.destination)}`)
                 .then(res => res.json())
                 .then(data => {
                     this.setState({
                         excursion: data,
-                        country: this.props.destination.country,
-                        destination: this.props.destination.destination
+                        country: this.props.stateObj.destination.country,
+                        destination: this.props.stateObj.destination.destination
                     });
                 });
         }
@@ -48,7 +47,7 @@ class Excursion extends Component {
 
     render(){
 
-
+    console.log(this.props);
 
         return(
             <div id={'excursionAnchor'}>
@@ -58,7 +57,7 @@ class Excursion extends Component {
                         <h3>{this.state.country}</h3>
                         <p>{this.state.destination}</p>
 
-                            <Link to={"/"}>Start Over</Link>
+                            <Link to={"/"} onClick={this.props.hide}>Start Over</Link>
 
 
                     </div>
@@ -107,7 +106,7 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
-                                                                                        <a className={'button'}>Learn More</a>
+                                                                                        <p className={'button'}>Learn More</p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -127,7 +126,7 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
-                                                                                        <a className={'button'}>Learn More</a>
+                                                                                        <p className={'button'}>Learn More</p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

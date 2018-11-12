@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavLink, HashRouter, withRouter, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class ExcursionList extends Component {
     constructor(props){
@@ -73,7 +73,7 @@ class ExcursionList extends Component {
 
                 </div>
 
-                    <Link to="/excursion">GO</Link>
+                    <Link to={"/excursion"} onClick={this.props.hide}>GO</Link>
 
             </div>
         );
