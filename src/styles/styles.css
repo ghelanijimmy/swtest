@@ -224,7 +224,7 @@ section.content {
                 color: #f36f21; }
               section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p {
                 color: #333; }
-              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent a.button {
+              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p.button {
                 display: inline-block;
                 text-align: center;
                 padding: 2% 1%;

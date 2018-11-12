@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {HashRouter, NavLink, withRouter, Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 
@@ -16,8 +16,13 @@ class Excursion extends Component {
     }
 
 
+
     componentDidMount(){
-        console.log(this.props.destination);
+        if(this.props.stateObj.hide === false){
+            this.props.hide();
+        }
+
+
         if(this.props.destination === undefined){
             fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.country)}/${encodeURIComponent(this.props.eDestination)}`)
                 .then(res => res.json())
@@ -29,32 +34,34 @@ class Excursion extends Component {
                     });
                 });
         }else {
-            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.destination.country)}/${encodeURIComponent(this.props.destination.destination)}`)
+            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.stateObj.destination.country)}/${encodeURIComponent(this.props.stateObj.destination.destination)}`)
                 .then(res => res.json())
                 .then(data => {
                     this.setState({
                         excursion: data,
-                        country: this.props.destination.country,
-                        destination: this.props.destination.destination
+                        country: this.props.stateObj.destination.country,
+                        destination: this.props.stateObj.destination.destination
                     });
                 });
         }
 
     }
 
+
     render(){
 
-
+    console.log(this.props);
 
         return(
-            <div>
+            <div id={'excursionAnchor'}>
 
                 <section className={'hero'}>
                     <div className={'excursionHeroBox'}>
                         <h3>{this.state.country}</h3>
                         <p>{this.state.destination}</p>
 
-                            <Link to={"/"}>Start Over</Link>
+                            <Link to={"/"} onClick={this.props.hide}>Start Over</Link>
+
 
                     </div>
                 </section>
@@ -102,7 +109,11 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
+<<<<<<< HEAD
                                                                                         <a className={'button'}>Learn More</a>
+=======
+                                                                                        <p className={'button'}>Learn More</p>
+>>>>>>> 43fdd622bde632decc83dd379628eb8a91cca833
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -122,7 +133,11 @@ class Excursion extends Component {
                                                                                         <p>
                                                                                             {excursion['excursionShortDescription']}
                                                                                         </p>
+<<<<<<< HEAD
                                                                                         <a className={'button'}>Learn More</a>
+=======
+                                                                                        <p className={'button'}>Learn More</p>
+>>>>>>> 43fdd622bde632decc83dd379628eb8a91cca833
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -158,4 +173,4 @@ Excursion.defaultProps = {
     eDestination: 'Antigua'
 }
 
-export default withRouter(Excursion);
+export default Excursion;
