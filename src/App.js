@@ -77,7 +77,7 @@ class App extends Component {
     return (
       <div className="App">
         <HashRouter>
-            <div>
+            <div className={'appContent'}>
             <Header />
             <div>
                 <Route exact path="/" render={(props)=><FetchInfo {...props} data={this.state.response} />} />

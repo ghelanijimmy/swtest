@@ -19,6 +19,18 @@ $black: #000;
 * {
   margin: 0;
   padding: 0;
+  .appContent {
+    &:after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 200px;
+    }
+    & > div {
+      background: white;
+      padding-bottom: 20px;
+    }
+  }
 }
 
 
@@ -96,6 +108,7 @@ section.hero {
     padding: 3% 5%;
     h1 {
       text-align: center;
+      color: $orange;
     }
     .excursionSelect {
       display: grid;
@@ -126,7 +139,12 @@ section.hero {
 /********EXCURSIONPAGE********/
 section.hero {
   min-height: 300px;
-  div {
+  div.excursionHeroBox {
+    background: $orange;
+    padding: 2% 5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     h1, p {
       text-align: center;
       color: $white;
@@ -135,8 +153,8 @@ section.hero {
       text-align: center;
       display: block;
       padding: 2% 1%;
-      background-color: $orange;
-      color: white;
+      background-color: $white;
+      color: $orange;
       text-decoration: none;
       margin: 15px auto 0;
       width: 100px;
@@ -159,21 +177,70 @@ section.content {
     grid-template: auto / 1fr;
     grid-gap: 20px;
     .category {
-      h3 {
+      h2 {
         padding: 25px 0;
         color: $orange;
       }
     }
     .subCategories {
       display: grid;
-      grid-template: minmax(100px, auto) / 1fr 1fr 1fr;
+      grid-template: minmax(100px, auto) / 1fr;
       grid-gap: 20px;
       .subCategory {
-        background-color: #ededed;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 5%;
+        //background-color: #ededed;
+        //-webkit-box-sizing: border-box;
+        //-moz-box-sizing: border-box;
+        //box-sizing: border-box;
+        //padding: 5%;
+        h4 {
+          background: #e5f2f9;
+          color: black;
+          padding: 3%;
+        }
+        .excursion {
+          display: grid;
+          grid-template: minmax(300px, auto) / 1fr 1fr 1fr;
+          grid-gap: 50px 40px;
+          margin-top: 40px;
+          div.excursionBack {
+            position: relative;
+            background: #f9f9f9;
+            -webkit-background-size: 200% !important;
+            background-repeat: no-repeat !important;
+            background-size: 200% !important;
+            display: flex !important;
+            flex-wrap: wrap;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            &:hover {
+              -webkit-background-size: 220% !important;
+              background-size: 220% !important;
+              -webkit-transition: all .1s ease-in-out;
+              -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+              -o-transition: all .1s ease-in-out;
+              transition: all .1s ease-in-out;
+              div {
+                background: rgba(0,0,0,0.6);
+              }
+            }
+            &>div {
+              padding: 12%;
+              box-sizing: border-box;
+              background: rgba(0, 0, 0, 0.8);
+              h3 {
+                margin-bottom: 15px;
+                color: $orange;
+              }
+              p {
+                color: $white;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -188,4 +255,8 @@ section.content {
   flex-wrap: wrap;
   min-height: 150px;
   margin-top: 30px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
 }

@@ -47,7 +47,7 @@ class Excursion extends Component {
             <div>
 
                 <section className={'hero'}>
-                    <div>
+                    <div className={'excursionHeroBox'}>
                         <h1>{this.state.country}</h1>
                         <p>{this.state.destination}</p>
                         <HashRouter>
@@ -69,7 +69,7 @@ class Excursion extends Component {
 
                                 return (
                                     <div key={title} className={'category'}>
-                                        <h3 key={title}>{title}</h3>
+                                        <h2 key={title}>{title}</h2>
                                         <div key={title + i} className={'subCategories'}>
                                             {
                                                 Object.values(this.state.excursion[obj]['subCategories']).map((sub) => {
@@ -78,6 +78,25 @@ class Excursion extends Component {
                                                     return (
                                                         <div key={subCatTitle + i} className={'subCategory'}>
                                                             <h4 key={subCatTitle}>{subCatTitle}</h4>
+                                                            <div key={sub['excursions']} className={'excursion'}>
+                                                            {
+                                                                Object.values(sub['excursions']).map((excursion)=> {
+                                                                    return(
+                                                                        <div className={'excursionBack'} key={excursion['excursionCode']} style={{background: `url(${excursion['excursionImages']['Img4X3']})`}}>
+                                                                            <div>
+                                                                                <h3 key={excursion['excursionName']}>
+                                                                                    {excursion['excursionName']}
+                                                                                </h3>
+
+                                                                                <p>
+                                                                                    {excursion['excursionShortDescription']}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                            </div>
                                                         </div>
 
                                                     )
