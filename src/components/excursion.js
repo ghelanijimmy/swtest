@@ -56,9 +56,12 @@ class Excursion extends Component {
                     </div>
                 </section>
                 <section className={'content'}>
-                    {/*<div className={'categoryTitle'}>*/}
-                        {/*<h1>Excursions</h1>*/}
-                    {/*</div>*/}
+                    <div className={'destinationContent'}>
+                        <h2>About {this.state.destination}</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquid amet, cum cupiditate distinctio dolor dolores, error, et exercitationem expedita illo magni minus provident quas qui saepe velit! Autem incidunt maiores minus obcaecati odit quasi suscipit totam vitae?
+                        </p>
+                    </div>
                     <div id={'categories'}>
 
                         {
@@ -82,15 +85,21 @@ class Excursion extends Component {
                                                             {
                                                                 Object.values(sub['excursions']).map((excursion)=> {
                                                                     return(
-                                                                        <div className={'excursionBack'} key={excursion['excursionCode']} style={{background: `url(${excursion['excursionImages']['Img4X3']})`}}>
+                                                                        <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                             <div>
-                                                                                <h3 key={excursion['excursionName']}>
-                                                                                    {excursion['excursionName']}
-                                                                                </h3>
+                                                                                <div className={'excursionImage'} style={{background: `url(${excursion['excursionImages']['Img16X9']})`}}>
 
-                                                                                <p>
-                                                                                    {excursion['excursionShortDescription']}
-                                                                                </p>
+                                                                                </div>
+                                                                                <div className={'excursionContent'}>
+                                                                                    <h3 key={excursion['excursionName']}>
+                                                                                        {excursion['excursionName']}
+                                                                                    </h3>
+
+                                                                                    <p>
+                                                                                        {excursion['excursionShortDescription']}
+                                                                                    </p>
+                                                                                    <a className={'button'}>Learn More</a>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     )

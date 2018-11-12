@@ -100,7 +100,7 @@ section.hero {
 
 /********EXCURSIONPAGE********/
 section.hero {
-  min-height: 300px; }
+  min-height: 400px; }
   section.hero div.excursionHeroBox {
     background: #f36f21;
     padding: 2% 5%;
@@ -125,6 +125,17 @@ section.content {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 100px; }
+  section.content div.destinationContent {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3%; }
+    section.content div.destinationContent h2 {
+      color: #f36f21;
+      margin-bottom: 20px; }
+    section.content div.destinationContent p {
+      width: 60%;
+      margin: auto;
+      display: blok; }
   section.content .categoryTitle {
     text-align: center;
     box-sizing: border-box;
@@ -135,19 +146,20 @@ section.content {
     grid-template: auto / 1fr;
     grid-gap: 20px; }
     section.content #categories .category h2 {
-      padding: 25px 0;
-      color: #f36f21; }
+      padding: 3%;
+      color: white;
+      background: #007cc3; }
     section.content #categories .subCategories {
       display: grid;
       grid-template: minmax(100px, auto)/1fr;
       grid-gap: 20px; }
       section.content #categories .subCategories .subCategory h4 {
         background: #e5f2f9;
-        color: black;
+        color: #396582;
         padding: 3%; }
       section.content #categories .subCategories .subCategory .excursion {
         display: grid;
-        grid-template: minmax(300px, auto)/1fr 1fr 1fr;
+        grid-template: minmax(300px, auto)/1fr 1fr;
         grid-gap: 50px 40px;
         margin-top: 40px; }
         section.content #categories .subCategories .subCategory .excursion div.excursionBack {
@@ -163,25 +175,35 @@ section.content {
           -ms-transition: all .2s ease-in-out;
           -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
-          section.content #categories .subCategories .subCategory .excursion div.excursionBack:hover {
-            -webkit-background-size: 220% !important;
-            background-size: 220% !important;
-            -webkit-transition: all .1s ease-in-out;
-            -moz-transition: all .1s ease-in-out;
-            -ms-transition: all .1s ease-in-out;
-            -o-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out; }
-            section.content #categories .subCategories .subCategory .excursion div.excursionBack:hover div {
-              background: rgba(0, 0, 0, 0.6); }
           section.content #categories .subCategories .subCategory .excursion div.excursionBack > div {
-            padding: 12%;
+            flex-basis: 100%;
             box-sizing: border-box;
-            background: rgba(0, 0, 0, 0.8); }
-            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div h3 {
-              margin-bottom: 15px;
-              color: #f36f21; }
-            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div p {
-              color: #fff; }
+            display: grid;
+            grid-template: minmax(440px, auto) minmax(100px, auto)/1fr;
+            grid-gap: 20px 20px; }
+            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionImage {
+              -webkit-background-size: cover !important;
+              background-size: cover !important;
+              background-position: center !important; }
+            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent {
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+              padding: 1% 2%; }
+              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent h3 {
+                margin-bottom: 15px;
+                color: #f36f21; }
+              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p {
+                color: #333; }
+              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent a.button {
+                display: inline-block;
+                text-align: center;
+                padding: 2% 1%;
+                background-color: #f36f21;
+                color: white;
+                text-decoration: none;
+                margin: 15px auto 15px;
+                width: 100px; }
 
 /*******FOOTER**********/
 .footer {
