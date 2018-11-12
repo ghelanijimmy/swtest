@@ -78,14 +78,14 @@ class App extends Component {
       <div className="App">
         <HashRouter>
             <div className={'appContent'}>
-            <Header />
-            <div>
-                <Route exact path="/" render={(props)=><FetchInfo {...props} data={this.state.response} />} />
-                <Route path="/excursion" render={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} />} />
-            </div>
+                <Header />
+                <div>
+                    <Route exact path="/" render={(props)=><FetchInfo {...props} data={this.state.response} />} />
+                    <Route path="/excursion" render={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} />} />
+                </div>
+                <Footer/>
             </div>
         </HashRouter>
-          <Footer/>
       </div>
     );
   }

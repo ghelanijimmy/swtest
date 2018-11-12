@@ -20,15 +20,8 @@ $black: #000;
   margin: 0;
   padding: 0;
   .appContent {
-    &:after {
-      display: block;
-      content: "";
-      width: 100%;
-      height: 200px;
-    }
     & > div {
       background: white;
-      padding-bottom: 20px;
     }
   }
 }
@@ -138,7 +131,7 @@ section.hero {
 
 /********EXCURSIONPAGE********/
 section.hero {
-  min-height: 400px;
+  min-height: 65vh;
   div.excursionHeroBox {
     background: $orange;
     padding: 2% 5%;
@@ -290,13 +283,11 @@ section.content {
 
 /*******FOOTER**********/
 .footer {
-  background: $orange;
+  background: $orange !important;
   display: flex;
   flex-wrap: wrap;
   min-height: 150px;
-  margin-top: 30px;
   position: fixed;
   width: 100%;
   bottom: 0;
-  z-index: -1;
 }
