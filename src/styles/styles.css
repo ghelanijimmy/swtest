@@ -245,6 +245,10 @@ section.content {
 
 /*******MEDIA QUERIES******/
 @media all and (max-width: 1000px) {
+  .appContent {
+    grid-template: auto 1fr auto / 1fr; }
+  header .mainHead {
+    grid-template: auto / 1fr; }
   .mainSubNav {
     display: none; }
   section.content .destinationContent p {
@@ -253,7 +257,9 @@ section.content {
   section.content #categories .subCategories .subCategory .excursion {
     grid-template-columns: 1fr; } }
 
-@media all and (max-width: 679px) {
+@media all and (max-width: 669px) {
+  header .mainHead .mainNav ul {
+    grid-template: auto / 1fr; }
   section.content {
     padding: 0 50px !important; }
     section.content .destinationContent p {
