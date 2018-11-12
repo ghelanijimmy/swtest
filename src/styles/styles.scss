@@ -350,6 +350,12 @@ section.content {
       }
     }
   }
+  .footer {
+    position: relative !important;
+  }
+  section.content {
+    margin-bottom: 60px !important;
+  }
 }
 
 @media all and (max-width: 669px){
@@ -359,6 +365,13 @@ section.content {
         ul {
           grid-template: auto / 1fr;
         }
+      }
+    }
+  }
+  section.hero {
+    .excursionBox {
+      .excursionSelect {
+        grid-template: auto / 1fr;
       }
     }
   }

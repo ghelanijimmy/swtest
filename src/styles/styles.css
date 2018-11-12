@@ -255,10 +255,16 @@ section.content {
     width: 80% !important;
     padding-bottom: 10px; }
   section.content #categories .subCategories .subCategory .excursion {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .footer {
+    position: relative !important; }
+  section.content {
+    margin-bottom: 60px !important; } }
 
 @media all and (max-width: 669px) {
   header .mainHead .mainNav ul {
+    grid-template: auto / 1fr; }
+  section.hero .excursionBox .excursionSelect {
     grid-template: auto / 1fr; }
   section.content {
     padding: 0 50px !important; }
