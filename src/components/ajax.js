@@ -5,9 +5,9 @@ import {withRouter} from 'react-router-dom';
 const FetchInfo= (props) => {
     return(
         <section className={'hero'}>
-            <ExcursionList data={props.data} location={props.location}/>
+            <ExcursionList data={props.data}  />
         </section>
     )
 }
 
-export default withRouter(FetchInfo);
+export default FetchInfo;

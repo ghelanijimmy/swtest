@@ -292,12 +292,21 @@ section.content {
   position: fixed;
   width: 100%;
   bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: $white;
 }
 
 
 
 /*******MEDIA QUERIES******/
 @media all and (max-width: 1000px){
+  header {
+    .mainHead {
+      grid-template: auto / 1fr;
+      grid-gap: 20px;
+    }
+  }
   .mainSubNav {
     display: none;
   }
@@ -320,7 +329,20 @@ section.content {
   }
 }
 
-@media all and (max-width: 679px){
+@media all and (max-width: 669px){
+  .appContent {
+    grid-template: auto / 1fr;
+  }
+  header {
+    .mainHead {
+      .mainNav {
+        ul {
+          grid-template: auto / 1fr;
+          grid-gap: 10px;
+        }
+      }
+    }
+  }
   section.content {
     padding: 0 50px !important;
     .destinationContent {
@@ -328,5 +350,15 @@ section.content {
         width: 90% !important;
       }
     }
+  }
+  section.hero {
+    .excursionBox {
+      .excursionSelect {
+        grid-template: auto/1fr;
+      }
+    }
+  }
+  .footer {
+    position: relative !important;
   }
 }

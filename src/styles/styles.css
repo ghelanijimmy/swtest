@@ -218,10 +218,16 @@ section.content {
   min-height: 150px;
   position: fixed;
   width: 100%;
-  bottom: 0; }
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: #fff; }
 
 /*******MEDIA QUERIES******/
 @media all and (max-width: 1000px) {
+  header .mainHead {
+    grid-template: auto / 1fr;
+    grid-gap: 20px; }
   .mainSubNav {
     display: none; }
   section.content .destinationContent p {
@@ -230,8 +236,17 @@ section.content {
   section.content #categories .subCategories .subCategory .excursion {
     grid-template-columns: 1fr; } }
 
-@media all and (max-width: 679px) {
+@media all and (max-width: 669px) {
+  .appContent {
+    grid-template: auto / 1fr; }
+  header .mainHead .mainNav ul {
+    grid-template: auto / 1fr;
+    grid-gap: 10px; }
   section.content {
     padding: 0 50px !important; }
     section.content .destinationContent p {
-      width: 90% !important; } }
+      width: 90% !important; }
+  section.hero .excursionBox .excursionSelect {
+    grid-template: auto/1fr; }
+  .footer {
+    position: relative !important; } }

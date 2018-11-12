@@ -11,7 +11,8 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state={
-            response:[]
+            response:[],
+            hide: false
         }
     }
 
@@ -24,6 +25,11 @@ class App extends Component {
                     response: data
                 });
             });
+    }
+    hideIt = () => {
+        this.setState({
+            hide: !this.state.hide
+        })
     }
   render() {
     var excursionObj;
@@ -80,8 +86,8 @@ class App extends Component {
             <div className={'appContent'}>
                 <Header />
                 <div>
-                    <Route exact path="/" component={(props)=><FetchInfo {...props} data={this.state.response} location={props.location}/>} />
-                    <Route path="/excursion" component={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} location={props.location}/>} />
+                    <FetchInfo data={this.state.response} />
+                    <Route path="/excursion" render={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} location={props.location}/>} />
                 </div>
                 <Footer/>
             </div>

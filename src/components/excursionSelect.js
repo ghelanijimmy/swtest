@@ -80,4 +80,4 @@ class ExcursionList extends Component {
     }
 }
 
-export default withRouter(ExcursionList);
+export default ExcursionList;
