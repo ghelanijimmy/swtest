@@ -18,7 +18,7 @@ class Excursion extends Component {
 
 
     componentDidMount(){
-
+        this.props.hide();
 
         if(this.props.destination === undefined){
             fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.country)}/${encodeURIComponent(this.props.eDestination)}`)

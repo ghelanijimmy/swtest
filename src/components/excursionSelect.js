@@ -73,7 +73,7 @@ class ExcursionList extends Component {
 
                 </div>
 
-                    <Link to={"/excursion"} onClick={this.props.hide}>GO</Link>
+                    <Link to={"/excursion"} >GO</Link>
 
             </div>
         );
