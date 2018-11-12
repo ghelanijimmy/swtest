@@ -1,7 +1,19 @@
 import React, {Component} from 'react';
-import {NavLink, HashRouter} from 'react-router-dom';
+import {NavLink, HashRouter, withRouter, Link} from 'react-router-dom';
 
 class ExcursionList extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+
+        }
+    }
+
+    componentDidMount(){
+        this.setState({
+            selectCountry: "",
+        })
+    }
 
 
     render(){
@@ -15,6 +27,15 @@ class ExcursionList extends Component {
                 </select>
 
             )
+
+        }
+
+        const destinationSelect = () => {
+            setTimeout(function(){
+                const countrySelect = document.getElementById('countryName');
+                const values = countrySelect.options[countrySelect.selectedIndex].text;
+                return (renderDestination(values));
+            },100)
 
         }
 
@@ -37,15 +58,6 @@ class ExcursionList extends Component {
             });
         }
 
-        const destinationSelect = () => {
-            setTimeout(function(){
-                const countrySelect = document.getElementById('countryName');
-                const values = countrySelect.options[countrySelect.selectedIndex].text;
-                return (renderDestination(values));
-            },100)
-
-        }
-
         return(
             <div className={'excursionBox'}>
 
@@ -60,14 +72,12 @@ class ExcursionList extends Component {
                     </select>
 
                 </div>
-                <HashRouter>
-                    <NavLink to="/excursion">GO</NavLink>
 
-                </HashRouter>
+                    <Link to="/excursion">GO</Link>
 
             </div>
         );
     }
 }
 
-export default ExcursionList;
+export default withRouter(ExcursionList);

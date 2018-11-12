@@ -3,8 +3,15 @@
 * {
   margin: 0;
   padding: 0; }
-  * .appContent > div {
-    background: white; }
+  * .appContent {
+    display: grid !important;
+    grid-template: 167px 76vh 150px / 1fr; }
+    * .appContent > div {
+      background: white;
+      display: flex !important;
+      flex-wrap: wrap; }
+      * .appContent > div > section.hero {
+        flex-basis: 100%; }
 
 header {
   /****HEADER*******/
@@ -93,32 +100,31 @@ section.hero {
       width: 100px; }
 
 /********EXCURSIONPAGE********/
-section.hero {
-  min-height: 65vh; }
-  section.hero div.excursionHeroBox {
-    background: #f36f21;
-    padding: 2% 5%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    section.hero div.excursionHeroBox h1, section.hero div.excursionHeroBox p {
-      text-align: center;
-      color: #fff; }
-    section.hero div.excursionHeroBox a {
-      text-align: center;
-      display: block;
-      padding: 2% 1%;
-      background-color: #fff;
-      color: #f36f21;
-      text-decoration: none;
-      margin: 15px auto 0;
-      width: 100px; }
+section.hero div.excursionHeroBox {
+  background: #f36f21;
+  padding: 2% 5%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  section.hero div.excursionHeroBox h1, section.hero div.excursionHeroBox p {
+    text-align: center;
+    color: #fff; }
+  section.hero div.excursionHeroBox a {
+    text-align: center;
+    display: block;
+    padding: 2% 1%;
+    background-color: #fff;
+    color: #f36f21;
+    text-decoration: none;
+    margin: 15px auto 0;
+    width: 100px; }
 
 section.content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 100px; }
+  padding: 0 100px;
+  margin-bottom: 180px; }
   section.content div.destinationContent {
     text-align: center;
     box-sizing: border-box;
@@ -129,7 +135,7 @@ section.content {
     section.content div.destinationContent p {
       width: 60%;
       margin: auto;
-      display: blok; }
+      display: block; }
   section.content .categoryTitle {
     text-align: center;
     box-sizing: border-box;
@@ -164,11 +170,16 @@ section.content {
           background-size: 200% !important;
           display: flex !important;
           flex-wrap: wrap;
+          box-shadow: 0px 5px 20px -10px black;
           -webkit-transition: all .2s ease-in-out;
           -moz-transition: all .2s ease-in-out;
           -ms-transition: all .2s ease-in-out;
           -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
+          section.content #categories .subCategories .subCategory .excursion div.excursionBack:hover {
+            box-shadow: 0px 15px 20px -10px #888;
+            margin-top: -5px;
+            padding-bottom: 5px; }
           section.content #categories .subCategories .subCategory .excursion div.excursionBack > div {
             flex-basis: 100%;
             box-sizing: border-box;
@@ -208,3 +219,19 @@ section.content {
   position: fixed;
   width: 100%;
   bottom: 0; }
+
+/*******MEDIA QUERIES******/
+@media all and (max-width: 1000px) {
+  .mainSubNav {
+    display: none; }
+  section.content .destinationContent p {
+    width: 80% !important;
+    padding-bottom: 10px; }
+  section.content #categories .subCategories .subCategory .excursion {
+    grid-template-columns: 1fr; } }
+
+@media all and (max-width: 679px) {
+  section.content {
+    padding: 0 50px !important; }
+    section.content .destinationContent p {
+      width: 90% !important; } }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {HashRouter, NavLink} from 'react-router-dom';
+import {HashRouter, NavLink, withRouter, Link, Redirect} from 'react-router-dom';
 
 
 
@@ -17,8 +17,9 @@ class Excursion extends Component {
 
 
     componentDidMount(){
+        console.log(this.props.destination);
         if(this.props.destination === undefined){
-            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${this.props.country}/${this.props.eDestination}`)
+            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.country)}/${encodeURIComponent(this.props.eDestination)}`)
                 .then(res => res.json())
                 .then(data => {
                     this.setState({
@@ -28,7 +29,7 @@ class Excursion extends Component {
                     });
                 });
         }else {
-            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${this.props.destination.country}/${this.props.destination.destination}`)
+            fetch(`https://hotelinfoservice.sunwingtravelgroup.com/1/en/excursionsCountryDestination/${encodeURIComponent(this.props.destination.country)}/${encodeURIComponent(this.props.destination.destination)}`)
                 .then(res => res.json())
                 .then(data => {
                     this.setState({
@@ -43,6 +44,8 @@ class Excursion extends Component {
 
     render(){
 
+
+
         return(
             <div>
 
@@ -50,9 +53,9 @@ class Excursion extends Component {
                     <div className={'excursionHeroBox'}>
                         <h1>{this.state.country}</h1>
                         <p>{this.state.destination}</p>
-                        <HashRouter>
-                            <NavLink to={"/"}>Start Over</NavLink>
-                        </HashRouter>
+
+                            <Link to={"/"}>Start Over</Link>
+
                     </div>
                 </section>
                 <section className={'content'}>
@@ -87,7 +90,7 @@ class Excursion extends Component {
                                                                     return(
                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                             <div>
-                                                                                <div className={'excursionImage'} style={{background: `url(${excursion['excursionImages']['Img16X9']})`}}>
+                                                                                <div className={'excursionImage'} style={{background: `url(https:${excursion['excursionImages']['Img4X3']})`}}>
 
                                                                                 </div>
                                                                                 <div className={'excursionContent'}>
@@ -133,4 +136,4 @@ Excursion.defaultProps = {
     eDestination: 'Antigua'
 }
 
-export default Excursion;
+export default withRouter(Excursion);

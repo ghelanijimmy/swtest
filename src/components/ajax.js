@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import ExcursionList from './excursionSelect';
+import {withRouter} from 'react-router-dom';
 
-
-class FetchInfo extends Component {
-
-
-    render(){
-        return(
-            <section className={'hero'}>
-                <ExcursionList data={this.props.data}/>
-            </section>
-        );
-    }
-
+const FetchInfo= (props) => {
+    return(
+        <section className={'hero'}>
+            <ExcursionList data={props.data} location={props.location}/>
+        </section>
+    )
 }
 
-export default FetchInfo;
+export default withRouter(FetchInfo);

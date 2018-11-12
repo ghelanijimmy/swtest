@@ -27,8 +27,8 @@ class App extends Component {
     }
   render() {
     var excursionObj;
-    var countryValue;
-    var destinationValue;
+    var countryValue = "";
+    var destinationValue = "";
     const checkExist = setInterval(function(){
         const countrySelect = document.getElementById('countryName');
 
@@ -80,8 +80,8 @@ class App extends Component {
             <div className={'appContent'}>
                 <Header />
                 <div>
-                    <Route exact path="/" render={(props)=><FetchInfo {...props} data={this.state.response} />} />
-                    <Route path="/excursion" render={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} />} />
+                    <Route exact path="/" component={(props)=><FetchInfo {...props} data={this.state.response} location={props.location}/>} />
+                    <Route path="/excursion" component={(props)=><Excursion {...props} destination={excursionObj} data={this.state.response} location={props.location}/>} />
                 </div>
                 <Footer/>
             </div>
