@@ -55,7 +55,7 @@ class Excursion extends Component {
 
                 <section className={'hero'}>
                     <div className={'excursionHeroBox'}>
-                        <h1>{this.state.country}</h1>
+                        <h3>{this.state.country}</h3>
                         <p>{this.state.destination}</p>
 
                             <Link to={"/"}>Start Over</Link>
