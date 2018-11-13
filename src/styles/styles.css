@@ -4,15 +4,18 @@
   font-family: 'PT Sans', sans-serif;
   margin: 0;
   padding: 0; }
-  * .appContent {
-    display: grid !important;
-    grid-template: 167px 76vh 150px / 1fr; }
-    * .appContent > div {
-      background: white;
-      display: flex !important;
-      flex-wrap: wrap; }
-      * .appContent > div > section.hero {
-        flex-basis: 100%; }
+
+* .appContent {
+  display: grid !important;
+  grid-template: 167px 76vh 150px / 1fr; }
+
+* .appContent > div {
+  background: white;
+  display: flex !important;
+  flex-wrap: wrap; }
+
+* .appContent > div > section.hero {
+  flex-basis: 100%; }
 
 h1 {
   font-size: 34px !important;
@@ -37,46 +40,55 @@ header {
   /****HEADER*******/
   background: #f36f21;
   /*********SUBNAV UNDER MAIN*******/ }
-  header .mainHead {
-    display: grid;
-    grid-template: auto / 1fr 1fr;
-    justify-content: space-around;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 20px 10px;
-    /******MAIN NAV********/ }
-    header .mainHead .logo {
-      display: grid;
-      grid-template: auto / 1fr;
-      align-items: center; }
-    header .mainHead .mainNav {
-      display: grid;
-      grid-template: auto / 1fr;
-      align-items: center; }
-      header .mainHead .mainNav ul {
-        display: grid;
-        grid-template: auto/repeat(5, 1fr); }
-        header .mainHead .mainNav ul li {
-          list-style: none;
-          color: #fff;
-          text-align: center; }
-  header .mainSubNav {
-    background-color: #f2f2f2;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-    header .mainSubNav ul {
-      display: grid;
-      grid-template: auto/repeat(8, auto);
-      align-items: center; }
-      header .mainSubNav ul li {
-        list-style: none;
-        text-align: center; }
-        header .mainSubNav ul li input {
-          padding: 5%;
-          display: block;
-          width: 100%; }
+
+header .mainHead {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  justify-content: space-around;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  /******MAIN NAV********/ }
+
+header .mainHead .logo {
+  display: grid;
+  grid-template: auto / 1fr;
+  align-items: center; }
+
+header .mainHead .mainNav {
+  display: grid;
+  grid-template: auto / 1fr;
+  align-items: center; }
+
+header .mainHead .mainNav ul {
+  display: grid;
+  grid-template: auto/repeat(5, 1fr); }
+
+header .mainHead .mainNav ul li {
+  list-style: none;
+  color: #fff;
+  text-align: center; }
+
+header .mainSubNav {
+  background-color: #f2f2f2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+header .mainSubNav ul {
+  display: grid;
+  grid-template: auto/repeat(8, auto);
+  align-items: center; }
+
+header .mainSubNav ul li {
+  list-style: none;
+  text-align: center; }
+
+header .mainSubNav ul li input {
+  padding: 5%;
+  display: block;
+  width: 100%; }
 
 /********HERO*********/
 section.hero {
@@ -91,33 +103,38 @@ section.hero {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
-  section.hero .excursionBox {
-    flex-basis: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 3% 5%; }
-    section.hero .excursionBox h1 {
-      text-align: center;
-      color: #f36f21; }
-    section.hero .excursionBox .excursionSelect {
-      display: grid;
-      grid-template: auto / 1fr 1fr;
-      grid-gap: 20px 50px;
-      margin: 3%; }
-      section.hero .excursionBox .excursionSelect select {
-        border: none;
-        background: white;
-        border-radius: 0px;
-        color: gray;
-        height: 50px; }
-    section.hero .excursionBox a {
-      text-align: center;
-      display: block;
-      padding: 2% 1%;
-      background-color: #f36f21;
-      color: white;
-      text-decoration: none;
-      margin: 15px auto 0;
-      width: 100px; }
+
+section.hero .excursionBox {
+  flex-basis: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3% 5%; }
+
+section.hero .excursionBox h1 {
+  text-align: center;
+  color: #f36f21; }
+
+section.hero .excursionBox .excursionSelect {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  grid-gap: 20px 50px;
+  margin: 3%; }
+
+section.hero .excursionBox .excursionSelect select {
+  border: none;
+  background: white;
+  border-radius: 0px;
+  color: gray;
+  height: 50px; }
+
+section.hero .excursionBox a {
+  text-align: center;
+  display: block;
+  padding: 2% 1%;
+  background-color: #f36f21;
+  color: white;
+  text-decoration: none;
+  margin: 15px auto 0;
+  width: 100px; }
 
 /********EXCURSIONPAGE********/
 section.hero div.excursionHeroBox {
@@ -126,18 +143,20 @@ section.hero div.excursionHeroBox {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  section.hero div.excursionHeroBox h3, section.hero div.excursionHeroBox p {
-    text-align: center;
-    color: #fff; }
-  section.hero div.excursionHeroBox a {
-    text-align: center;
-    display: block;
-    padding: 2% 1%;
-    background-color: #fff;
-    color: #f36f21;
-    text-decoration: none;
-    margin: 15px auto 0;
-    width: 100px; }
+
+section.hero div.excursionHeroBox h3, section.hero div.excursionHeroBox p {
+  text-align: center;
+  color: #fff; }
+
+section.hero div.excursionHeroBox a {
+  text-align: center;
+  display: block;
+  padding: 2% 1%;
+  background-color: #fff;
+  color: #f36f21;
+  text-decoration: none;
+  margin: 15px auto 0;
+  width: 100px; }
 
 section.content {
   -webkit-box-sizing: border-box;
@@ -145,93 +164,110 @@ section.content {
   box-sizing: border-box;
   padding: 0 100px;
   margin-bottom: 180px; }
-  section.content div.destinationContent {
-    text-align: center;
-    box-sizing: border-box;
-    padding: 3%; }
-    section.content div.destinationContent h2 {
-      color: #f36f21;
-      margin-bottom: 20px; }
-    section.content div.destinationContent p {
-      width: 60%;
-      margin: auto;
-      display: block; }
-  section.content .categoryTitle {
-    text-align: center;
-    box-sizing: border-box;
-    padding: 2%;
-    color: #f36f21; }
-  section.content #categories {
-    display: grid;
-    grid-template: auto / 1fr;
-    grid-gap: 20px; }
-    section.content #categories .category h2 {
-      padding: 3%;
-      color: white !important;
-      background: #007cc3; }
-    section.content #categories .subCategories {
-      display: grid;
-      grid-template: minmax(100px, auto)/1fr;
-      grid-gap: 20px; }
-      section.content #categories .subCategories .subCategory h4 {
-        background: #e5f2f9;
-        color: #396582;
-        padding: 3%; }
-      section.content #categories .subCategories .subCategory .excursion {
-        display: grid;
-        grid-template: minmax(300px, auto)/1fr 1fr;
-        grid-gap: 50px 40px;
-        margin-top: 40px; }
-        section.content #categories .subCategories .subCategory .excursion div.excursionBack {
-          position: relative;
-          background: #f9f9f9;
-          -webkit-background-size: 200% !important;
-          background-repeat: no-repeat !important;
-          background-size: 200% !important;
-          display: flex !important;
-          flex-wrap: wrap;
-          box-shadow: 0px 5px 20px -10px black;
-          -webkit-transition: all .2s ease-in-out;
-          -moz-transition: all .2s ease-in-out;
-          -ms-transition: all .2s ease-in-out;
-          -o-transition: all .2s ease-in-out;
-          transition: all .2s ease-in-out; }
-          section.content #categories .subCategories .subCategory .excursion div.excursionBack:hover {
-            box-shadow: 0px 15px 20px -10px #888;
-            margin-top: -5px;
-            padding-bottom: 5px; }
-          section.content #categories .subCategories .subCategory .excursion div.excursionBack > div {
-            flex-basis: 100%;
-            box-sizing: border-box;
-            display: grid;
-            grid-template: minmax(350px, auto) minmax(350px, auto)/1fr;
-            grid-gap: 20px 20px; }
-            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionImage {
-              -webkit-background-size: cover !important;
-              background-size: cover !important;
-              background-position: center !important; }
-            section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent {
-              -webkit-box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              box-sizing: border-box;
-              padding: 1% 2%;
-              display: grid;
-              grid-template: 1fr 2fr 1fr / 1fr;
-              text-align: left;
-              align-items: center; }
-              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent h3 {
-                margin-bottom: 15px;
-                color: #f36f21; }
-              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p {
-                color: #333; }
-              section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p.button {
-                display: inline-block;
-                text-align: center;
-                padding: 2% 1%;
-                background-color: #f36f21;
-                color: white;
-                text-decoration: none;
-                width: 100px; }
+
+section.content div.destinationContent {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 3%; }
+
+section.content div.destinationContent h2 {
+  color: #f36f21;
+  margin-bottom: 20px; }
+
+section.content div.destinationContent p {
+  width: 60%;
+  margin: auto;
+  display: block; }
+
+section.content .categoryTitle {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 2%;
+  color: #f36f21; }
+
+section.content #categories {
+  display: grid;
+  grid-template: auto / 1fr;
+  grid-gap: 20px; }
+
+section.content #categories .category h2 {
+  padding: 3%;
+  color: white !important;
+  background: #007cc3; }
+
+section.content #categories .subCategories {
+  display: grid;
+  grid-template: minmax(100px, auto)/1fr;
+  grid-gap: 20px; }
+
+section.content #categories .subCategories .subCategory h4 {
+  background: #e5f2f9;
+  color: #396582;
+  padding: 3%; }
+
+section.content #categories .subCategories .subCategory .excursion {
+  display: grid;
+  grid-template: minmax(300px, auto)/1fr 1fr;
+  grid-gap: 50px 40px;
+  margin-top: 40px; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack {
+  position: relative;
+  background: #f9f9f9;
+  -webkit-background-size: 200% !important;
+  background-repeat: no-repeat !important;
+  background-size: 200% !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  box-shadow: 0px 5px 20px -10px black;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack:hover {
+  box-shadow: 0px 15px 20px -10px #888;
+  margin-top: -5px;
+  padding-bottom: 5px; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div {
+  flex-basis: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template: minmax(350px, auto) minmax(350px, auto)/1fr;
+  grid-gap: 20px 20px; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionImage {
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  background-position: center !important; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1% 2%;
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 1fr;
+  text-align: left;
+  align-items: center; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent h3 {
+  margin-bottom: 15px;
+  color: #f36f21; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p {
+  color: #333; }
+
+section.content #categories .subCategories .subCategory .excursion div.excursionBack > div div.excursionContent p.button {
+  display: inline-block;
+  text-align: center;
+  padding: 2% 1%;
+  background-color: #f36f21;
+  color: white;
+  text-decoration: none;
+  width: 100px; }
 
 /*******FOOTER**********/
 .footer {
@@ -268,5 +304,5 @@ section.content {
     grid-template: auto / 1fr; }
   section.content {
     padding: 0 50px !important; }
-    section.content .destinationContent p {
-      width: 90% !important; } }
+  section.content .destinationContent p {
+    width: 90% !important; } }
