@@ -104,7 +104,7 @@ console.log(this.state);
         <HashRouter>
             <div className={'appContent'}>
                 <Header />
-                <div>
+                <div className={'mainContent'}>
                     <FetchInfo data={this.state.response} hidden={this.state.hide}/>
                     <Route path="/excursion" render={(props)=><Excursion {...props} data={this.state.response} stateObj={this.state} destination={excursionObj} hide={hideMe}/>} />
                 </div>

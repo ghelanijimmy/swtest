@@ -21,9 +21,10 @@ $black: #000;
   margin: 0;
   padding: 0;
   .appContent {
-    display: grid !important;
-    grid-template: 167px 76vh 150px / 1fr;
-    & > div {
+    display: grid!important;
+    grid-template: 167px auto 130px/1fr;
+    height: 100vh;
+    & > div.mainContent {
       background: white;
       display: flex !important;
       flex-wrap: wrap;
@@ -313,7 +314,6 @@ section.content {
   display: flex;
   flex-wrap: wrap;
   min-height: 150px;
-  position: fixed;
   width: 100%;
   bottom: 0;
 }
