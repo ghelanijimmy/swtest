@@ -109,7 +109,21 @@ class Excursion extends Component {
                                                                 <div key={sub['excursions']} className={'excursion'}>
                                                                     {
                                                                         Object.values(sub['excursions']).map((excursion)=> {
-                                                                            var reg = new RegExp(this.state.filter, 'ig');
+                                                                            let strArray = this.state.filter.split(" ");
+                                                                            var regStr = "";
+                                                                            strArray.forEach(function(strItem, index){
+                                                                                console.log(index);
+                                                                                console.log(strArray.length);
+                                                                                if(index < strArray.length - 1){
+                                                                                    regStr += '(?:' + strItem + ')|';
+                                                                                } else {
+                                                                                    regStr += '(?:' + strItem + ')';
+                                                                                }
+
+                                                                            });
+                                                                            console.log(regStr);
+
+                                                                            var reg = new RegExp(regStr, 'ig');
                                                                             var myregex = excursion['excursionName'].match(reg);
                                                                             console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
