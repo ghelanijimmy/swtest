@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-
+import Filter from './filter';
 
 
 class Excursion extends Component {
@@ -11,7 +11,15 @@ class Excursion extends Component {
     constructor(props){
         super(props);
         this.state = {
-            excursion: ""
+            excursion: "",
+            filter: ""
+        }
+        this.handleInput = () => {
+            console.log('changed');
+            this.setState({
+                filter: document.getElementById('filterInput').value
+            });
+            console.log(this.state.filter);
         }
     }
 
@@ -73,6 +81,7 @@ class Excursion extends Component {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquid amet, cum cupiditate distinctio dolor dolores, error, et exercitationem expedita illo magni minus provident quas qui saepe velit! Autem incidunt maiores minus obcaecati odit quasi suscipit totam vitae?
                         </p>
                     </div>
+                    <Filter onFilter={this.handleInput} filter={this.state.filter}/>
                     <div id={'categories'}>
 
                         {
@@ -80,78 +89,84 @@ class Excursion extends Component {
 
 
                                 var title = this.state.excursion[obj]['categoryName'];
+                                var reg = new RegExp(this.state.filter, 'ig');
+                                var myregex = title.match(reg);
+                                console.log(myregex);
 
-                                return (
-                                    <div key={title} className={'category'}>
-                                        <h2 key={title}>{title}</h2>
-                                        <div key={title + i} className={'subCategories'}>
-                                            {
-                                                Object.values(this.state.excursion[obj]['subCategories']).map((sub) => {
-                                                    var subCatTitle = "";
-                                                    subCatTitle = sub['subCategoryName'];
-                                                    return (
-                                                        <div key={subCatTitle + i} className={'subCategory'}>
-                                                            <h4 key={subCatTitle}>{subCatTitle}</h4>
-                                                            <div key={sub['excursions']} className={'excursion'}>
-                                                            {
-                                                                Object.values(sub['excursions']).map((excursion)=> {
-                                                                    if(excursion['excursionImages'] !== null){
-                                                                        return(
-                                                                            <div className={'excursionBack'} key={excursion['excursionCode']}>
-                                                                                <div>
-                                                                                    <div className={'excursionImage'} style={{background: `url(https:${excursion['excursionImages']['Img4X3']})`}}>
+                                if(myregex !== null){
+                                    return (
+                                        <div key={title} className={'category'}>
+                                            <h2 key={title}>{title}</h2>
+                                            <div key={title + i} className={'subCategories'}>
+                                                {
+                                                    Object.values(this.state.excursion[obj]['subCategories']).map((sub) => {
+                                                        var subCatTitle = "";
+                                                        subCatTitle = sub['subCategoryName'];
+                                                        return (
+                                                            <div key={subCatTitle + i} className={'subCategory'}>
+                                                                <h4 key={subCatTitle}>{subCatTitle}</h4>
+                                                                <div key={sub['excursions']} className={'excursion'}>
+                                                                    {
+                                                                        Object.values(sub['excursions']).map((excursion)=> {
+                                                                            if(excursion['excursionImages'] !== null){
+                                                                                return(
+                                                                                    <div className={'excursionBack'} key={excursion['excursionCode']}>
+                                                                                        <div>
+                                                                                            <div className={'excursionImage'} style={{background: `url(https:${excursion['excursionImages']['Img4X3']})`}}>
 
+                                                                                            </div>
+                                                                                            <div className={'excursionContent'}>
+                                                                                                <h3 key={excursion['excursionName']}>
+                                                                                                    {excursion['excursionName']}
+                                                                                                </h3>
+
+                                                                                                <p>
+                                                                                                    {excursion['excursionShortDescription']}
+                                                                                                </p>
+
+                                                                                                <p className={'button'}>Learn More</p>
+
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
-                                                                                    <div className={'excursionContent'}>
-                                                                                        <h3 key={excursion['excursionName']}>
-                                                                                            {excursion['excursionName']}
-                                                                                        </h3>
+                                                                                )
+                                                                            } else {
+                                                                                return(
+                                                                                    <div className={'excursionBack'} key={excursion['excursionCode']}>
+                                                                                        <div>
+                                                                                            <div className={'excursionImage'} style={{background: `url(https://placehold.it/400x300)`}}>
 
-                                                                                        <p>
-                                                                                            {excursion['excursionShortDescription']}
-                                                                                        </p>
+                                                                                            </div>
+                                                                                            <div className={'excursionContent'}>
+                                                                                                <h3 key={excursion['excursionName']}>
+                                                                                                    {excursion['excursionName']}
+                                                                                                </h3>
 
-                                                                                        <p className={'button'}>Learn More</p>
+                                                                                                <p>
+                                                                                                    {excursion['excursionShortDescription']}
+                                                                                                </p>
 
+                                                                                                <p className={'button'}>Learn More</p>
+
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        )
-                                                                    } else {
-                                                                        return(
-                                                                            <div className={'excursionBack'} key={excursion['excursionCode']}>
-                                                                                <div>
-                                                                                    <div className={'excursionImage'} style={{background: `url(https://placehold.it/400x300)`}}>
-
-                                                                                    </div>
-                                                                                    <div className={'excursionContent'}>
-                                                                                        <h3 key={excursion['excursionName']}>
-                                                                                            {excursion['excursionName']}
-                                                                                        </h3>
-
-                                                                                        <p>
-                                                                                            {excursion['excursionShortDescription']}
-                                                                                        </p>
-
-                                                                                        <p className={'button'}>Learn More</p>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        )
+                                                                                )
+                                                                            }
+                                                                        })
                                                                     }
-                                                                })
-                                                            }
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                    )
-                                                })
-                                            }
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+
                                         </div>
+                                    );
+                                }
 
-                                    </div>
-                                );
 
                             })
                         }
