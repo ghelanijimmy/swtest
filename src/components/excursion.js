@@ -18,6 +18,7 @@ class Excursion extends Component {
 
 
     componentDidMount(){
+
         if(this.props.stateObj.hide === false){
             this.props.hide();
         }
