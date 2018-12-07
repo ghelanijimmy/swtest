@@ -99,12 +99,13 @@ class Excursion extends Component {
                                             <h2 key={title}>{title}</h2>
                                             <div key={title + i} className={'subCategories'}>
                                                 {
-                                                    Object.values(this.state.excursion[obj]['subCategories']).map((sub) => {
+                                                    Object.values(this.state.excursion[obj]['subCategories']).map((sub, subind) => {
                                                         var subCatTitle = "";
                                                         subCatTitle = sub['subCategoryName'];
                                                         return (
                                                             <div key={subCatTitle + i} className={'subCategory'}>
-                                                                <h4 key={subCatTitle}>{subCatTitle}</h4>
+
+                                                                <h4 id={subCatTitle.replace(/ /g, "")} key={subCatTitle}>{subCatTitle}</h4>
                                                                 <div key={sub['excursions']} className={'excursion'}>
                                                                     {
                                                                         Object.values(sub['excursions']).map((excursion)=> {
@@ -113,6 +114,15 @@ class Excursion extends Component {
                                                                             console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
                                                                                 if(myregex !== null){
+                                                                                    let excursionBox = document.querySelectorAll('.excursion');
+                                                                                    excursionBox.forEach(function(eBox){
+                                                                                        if(eBox.hasChildNodes()){
+                                                                                            eBox.parentNode.style.display = 'initial';
+                                                                                        }else {
+                                                                                            eBox.parentNode.style.display = 'none';
+
+                                                                                        }
+                                                                                    });
                                                                                     return(
                                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                                             <div>
@@ -137,6 +147,15 @@ class Excursion extends Component {
                                                                                 }
                                                                             } else {
                                                                                 if(myregex !== null){
+                                                                                    let excursionBox = document.querySelectorAll('.excursion');
+                                                                                    excursionBox.forEach(function(eBox){
+                                                                                        if(eBox.hasChildNodes()){
+                                                                                            eBox.parentNode.style.display = 'initial';
+                                                                                        }else {
+                                                                                            eBox.parentNode.style.display = 'none';
+
+                                                                                        }
+                                                                                    });
                                                                                     return(
                                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                                             <div>
