@@ -193,6 +193,7 @@ class Excursion extends Component {
                                                                                     )
                                                                                 }
                                                                             }
+                                                                            return true;
                                                                         })
                                                                     }
                                                                 </div>
@@ -212,7 +213,6 @@ class Excursion extends Component {
                         }
                     </div>
                 </section>
-                {/*<pre>{JSON.stringify(this.state.excursion, null, 2)}</pre>*/}
             </div>
 
 
