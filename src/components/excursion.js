@@ -89,11 +89,11 @@ class Excursion extends Component {
 
 
                                 var title = this.state.excursion[obj]['categoryName'];
-                                var reg = new RegExp(this.state.filter, 'ig');
-                                var myregex = title.match(reg);
-                                console.log(myregex);
+                                // var reg = new RegExp(this.state.filter, 'ig');
+                                // var myregex = title.match(reg);
+                                // console.log(myregex);
 
-                                if(myregex !== null){
+                                // if(myregex !== null){
                                     return (
                                         <div key={title} className={'category'}>
                                             <h2 key={title}>{title}</h2>
@@ -108,50 +108,57 @@ class Excursion extends Component {
                                                                 <div key={sub['excursions']} className={'excursion'}>
                                                                     {
                                                                         Object.values(sub['excursions']).map((excursion)=> {
+                                                                            var reg = new RegExp(this.state.filter, 'ig');
+                                                                            var myregex = excursion['excursionName'].match(reg);
+                                                                            console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
-                                                                                return(
-                                                                                    <div className={'excursionBack'} key={excursion['excursionCode']}>
-                                                                                        <div>
-                                                                                            <div className={'excursionImage'} style={{background: `url(https:${excursion['excursionImages']['Img4X3']})`}}>
+                                                                                if(myregex !== null){
+                                                                                    return(
+                                                                                        <div className={'excursionBack'} key={excursion['excursionCode']}>
+                                                                                            <div>
+                                                                                                <div className={'excursionImage'} style={{background: `url(https:${excursion['excursionImages']['Img4X3']})`}}>
 
-                                                                                            </div>
-                                                                                            <div className={'excursionContent'}>
-                                                                                                <h3 key={excursion['excursionName']}>
-                                                                                                    {excursion['excursionName']}
-                                                                                                </h3>
+                                                                                                </div>
+                                                                                                <div className={'excursionContent'}>
+                                                                                                    <h3 key={excursion['excursionName']}>
+                                                                                                        {excursion['excursionName']}
+                                                                                                    </h3>
 
-                                                                                                <p>
-                                                                                                    {excursion['excursionShortDescription']}
-                                                                                                </p>
+                                                                                                    <p>
+                                                                                                        {excursion['excursionShortDescription']}
+                                                                                                    </p>
 
-                                                                                                <p className={'button'}>Learn More</p>
+                                                                                                    <p className={'button'}>Learn More</p>
 
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>
-                                                                                )
+                                                                                    )
+                                                                                }
                                                                             } else {
-                                                                                return(
-                                                                                    <div className={'excursionBack'} key={excursion['excursionCode']}>
-                                                                                        <div>
-                                                                                            <div className={'excursionImage'} style={{background: `url(https://placehold.it/400x300)`}}>
+                                                                                if(myregex !== null){
+                                                                                    return(
+                                                                                        <div className={'excursionBack'} key={excursion['excursionCode']}>
+                                                                                            <div>
+                                                                                                <div className={'excursionImage'} style={{background: `url(https://placehold.it/400x300)`}}>
 
-                                                                                            </div>
-                                                                                            <div className={'excursionContent'}>
-                                                                                                <h3 key={excursion['excursionName']}>
-                                                                                                    {excursion['excursionName']}
-                                                                                                </h3>
+                                                                                                </div>
+                                                                                                <div className={'excursionContent'}>
+                                                                                                    <h3 key={excursion['excursionName']}>
+                                                                                                        {excursion['excursionName']}
+                                                                                                    </h3>
 
-                                                                                                <p>
-                                                                                                    {excursion['excursionShortDescription']}
-                                                                                                </p>
+                                                                                                    <p>
+                                                                                                        {excursion['excursionShortDescription']}
+                                                                                                    </p>
 
-                                                                                                <p className={'button'}>Learn More</p>
+                                                                                                    <p className={'button'}>Learn More</p>
 
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
-                                                                                    </div>
-                                                                                )
+                                                                                    )
+                                                                                }
                                                                             }
                                                                         })
                                                                     }
@@ -165,7 +172,7 @@ class Excursion extends Component {
 
                                         </div>
                                     );
-                                }
+                                // }
 
 
                             })
