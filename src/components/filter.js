@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Filter extends Component {
 
     render(){
-        if(this.props.filter == ""){
+        if(this.props.filter === ""){
             return(
                 <div className={'filterBox'}>
                     <input id={'filterInput'} placeholder={'Filter'} onChange={this.props.onFilter} value={this.props.filter}/>
