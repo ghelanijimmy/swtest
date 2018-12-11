@@ -133,7 +133,7 @@ class Excursion extends Component {
                                                                                         if(eBox.hasChildNodes()){
                                                                                             eBox.parentNode.style.display = 'initial';
                                                                                         }else {
-                                                                                            eBox.parentNode.style.display = 'none';
+                                                                                            eBox.closest('.category').style.display = 'none';
 
                                                                                         }
                                                                                     });
@@ -166,7 +166,7 @@ class Excursion extends Component {
                                                                                         if(eBox.hasChildNodes()){
                                                                                             eBox.parentNode.style.display = 'initial';
                                                                                         }else {
-                                                                                            eBox.parentNode.style.display = 'none';
+                                                                                            eBox.closest('.category').style.display = 'none';
 
                                                                                         }
                                                                                     });
