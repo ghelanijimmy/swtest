@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Filter extends Component {
 
     render(){
-        console.log(this.props.filter);
+        // console.log(this.props.filter);
         if(this.props.filter === ""){
             return(
                 <div className={'filterBox'}>

@@ -79,8 +79,8 @@ class App extends Component {
                             destinationValue = destinationSelect.options[destinationSelect.selectedIndex].text;
                         }
 
-                        console.log(countryValue);
-                        console.log(destinationValue);
+                        // console.log(countryValue);
+                        // console.log(destinationValue);
 
                         excursionObj = {
                             country: countryValue,
