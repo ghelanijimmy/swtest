@@ -19,7 +19,7 @@ class Excursion extends Component {
             this.setState({
                 filter: document.getElementById('filterInput').value
             });
-            console.log(this.state.filter);
+            // console.log(this.state.filter);
         }
     }
 
@@ -112,8 +112,8 @@ class Excursion extends Component {
                                                                             let strArray = this.state.filter.split(" ");
                                                                             var regStr = "";
                                                                             strArray.forEach(function(strItem, index){
-                                                                                console.log(index);
-                                                                                console.log(strArray.length);
+                                                                                // console.log(index);
+                                                                                // console.log(strArray.length);
                                                                                 if(index < strArray.length - 1){
                                                                                     regStr += '(?:' + strItem + ')|';
                                                                                 } else {
@@ -121,11 +121,11 @@ class Excursion extends Component {
                                                                                 }
 
                                                                             });
-                                                                            console.log(regStr);
+                                                                            // console.log(regStr);
 
                                                                             var reg = new RegExp(regStr, 'ig');
                                                                             var myregex = excursion['excursionName'].match(reg);
-                                                                            console.log(myregex);
+                                                                            // console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
                                                                                 if(myregex !== null){
                                                                                     let excursionBox = document.querySelectorAll('.excursion');
@@ -134,7 +134,6 @@ class Excursion extends Component {
                                                                                             eBox.parentNode.style.display = 'initial';
                                                                                         }else {
                                                                                             eBox.parentNode.style.display = 'none';
-
                                                                                         }
                                                                                     });
                                                                                     return(
