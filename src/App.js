@@ -6,6 +6,7 @@ import {Route, HashRouter} from 'react-router-dom';
 import Footer from './components/footer';
 
 import './styles/styles.css';
+import 'antd/dist/antd.css';
 import Excursion from "./components/excursion";
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
         fetch('https://hotelinfoservice.sunwingtravelgroup.com/en/AllHotelDestinationList')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 this.setState({
                     response: data
                 });
@@ -97,7 +98,7 @@ class App extends Component {
         }
 
     }, 100);
-console.log(this.state);
+// console.log(this.state);
     return (
 
       <div className="App">

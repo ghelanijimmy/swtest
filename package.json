@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.11.2",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-sass": "^4.0.2",
