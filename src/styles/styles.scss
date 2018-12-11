@@ -189,32 +189,37 @@ section.content {
   box-sizing: border-box;
   padding: 0 100px;
   margin-bottom: 180px;
-<<<<<<< HEAD
   div.filterBox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    background: $niceGray;
     #filterInput {
       box-sizing: border-box;
       padding: 1%;
       border: 1px solid #ededed;
       text-align: center;
+      padding: 1% 0;
+      box-sizing: border-box;
+      margin-top: 1%;
     }
     #filterOutput {
-      margin: 2% 0;
       font-size: 2em;
       color: $orange;
       font-weight: bold;
+      padding: 1% 0;
+      box-sizing: border-box;
       #filterLabel {
         font-weight: 100;
-        color: #6b6b6b;
+        color: $white;
       }
     }
   }
-=======
->>>>>>> parent of d31b009e... update filter and style rules
   div.destinationContent {
     text-align: center;
     box-sizing: border-box;

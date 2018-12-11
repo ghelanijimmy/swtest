@@ -8,7 +8,7 @@ class Filter extends Component {
             return(
                 <div className={'filterBox'}>
                     <input id={'filterInput'} placeholder={'Filter'} onChange={this.props.onFilter} value={this.props.filter}/>
-                    <div id={'filterOutput'}>{this.props.filter}</div>
+                    <div id={'filterOutput'}>Type to Filter Excursion</div>
                 </div>
             );
         }else {
