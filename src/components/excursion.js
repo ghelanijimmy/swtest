@@ -131,9 +131,9 @@ class Excursion extends Component {
                                                                                     let excursionBox = document.querySelectorAll('.excursion');
                                                                                     excursionBox.forEach(function(eBox){
                                                                                         if(eBox.hasChildNodes()){
-                                                                                            eBox.closest('.category').style.display = 'initial';
+                                                                                            eBox.parentNode.style.display = 'initial';
                                                                                         }else {
-                                                                                            eBox.closest('.category').style.display = 'none';
+                                                                                            eBox.parentNode.style.display = 'none';
 
                                                                                         }
                                                                                     });
@@ -164,9 +164,9 @@ class Excursion extends Component {
                                                                                     let excursionBox = document.querySelectorAll('.excursion');
                                                                                     excursionBox.forEach(function(eBox){
                                                                                         if(eBox.hasChildNodes()){
-                                                                                            eBox.closest('.category').style.display = 'initial';
+                                                                                            eBox.parentNode.style.display = 'initial';
                                                                                         }else {
-                                                                                            eBox.closest('.category').style.display = 'none';
+                                                                                            eBox.parentNode.style.display = 'none';
 
                                                                                         }
                                                                                     });
