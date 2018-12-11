@@ -150,6 +150,7 @@ class Excursion extends Component {
                                                                             var myregex = excursion['excursionName'].match(reg);
                                                                             // console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
+                                                                                console.log(myregex);
                                                                                 if(myregex !== null){
                                                                                     return(
                                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
