@@ -55,8 +55,36 @@ class Excursion extends Component {
 
         const handleInput = () => {
             // console.log('changed');
+            // this.setState({
+            //     filter: document.getElementById('filterInput').value
+            // });
+            updateState();
+            filter();
+        }
+        const updateState = () => {
             this.setState({
                 filter: document.getElementById('filterInput').value
+            });
+        }
+        const filter = () => {
+            let excursionBox = document.querySelectorAll('.excursion');
+            excursionBox.forEach(function(eBox){
+                if(eBox.childElementCount > 0){
+                    eBox.parentNode.style.display = 'initial';
+                    eBox.parentNode.classList.remove('invisible');
+                    eBox.closest('.category').style.display = "initial";
+                }else {
+                    eBox.parentNode.style.display = 'none';
+                    eBox.parentNode.classList.add('invisible');
+                    let subCat = eBox.closest('.subCategories').querySelectorAll('.subCategory');
+                    let invisibleSubCat = eBox.closest('.subCategories').querySelectorAll('.invisible');
+                    console.log(`subcat: ${subCat.length} | invisible: ${invisibleSubCat.length}`);
+                    if(subCat.length === invisibleSubCat.length){
+                        eBox.closest('.category').style.display = "none";
+                    } else {
+                        eBox.closest('.category').style.display = "initial";
+                    }
+                }
             });
         }
 
@@ -115,7 +143,6 @@ class Excursion extends Component {
                                                                                 } else {
                                                                                     regStr += '(?:' + strItem + ')';
                                                                                 }
-
                                                                             });
                                                                             // console.log(regStr);
 
@@ -124,25 +151,6 @@ class Excursion extends Component {
                                                                             // console.log(myregex);
                                                                             if(excursion['excursionImages'] !== null){
                                                                                 if(myregex !== null){
-                                                                                    let excursionBox = document.querySelectorAll('.excursion');
-                                                                                    excursionBox.forEach(function(eBox){
-                                                                                        if(eBox.childElementCount > 0){
-                                                                                            eBox.parentNode.style.display = 'initial';
-                                                                                            eBox.parentNode.classList.remove('invisible');
-                                                                                            eBox.closest('.category').style.display = "initial";
-                                                                                        }else {
-                                                                                            eBox.parentNode.style.display = 'none';
-                                                                                            eBox.parentNode.classList.add('invisible');
-                                                                                            let subCat = eBox.closest('.subCategories').querySelectorAll('.subCategory');
-                                                                                            let invisibleSubCat = eBox.closest('.subCategories').querySelectorAll('.invisible');
-                                                                                            console.log(`subcat: ${subCat.length} | invisible: ${invisibleSubCat.length}`);
-                                                                                            if(subCat.length === invisibleSubCat.length){
-                                                                                                eBox.closest('.category').style.display = "none";
-                                                                                            } else {
-                                                                                                eBox.closest('.category').style.display = "initial";
-                                                                                            }
-                                                                                        }
-                                                                                    });
                                                                                     return(
                                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                                             <div>
@@ -168,25 +176,6 @@ class Excursion extends Component {
                                                                                 }
                                                                             } else {
                                                                                 if(myregex !== null){
-                                                                                    let excursionBox = document.querySelectorAll('.excursion');
-                                                                                    excursionBox.forEach(function(eBox){
-                                                                                        if(eBox.childElementCount > 0){
-                                                                                            eBox.parentNode.style.display = 'initial';
-                                                                                            eBox.parentNode.classList.remove('invisible');
-                                                                                            eBox.closest('.category').style.display = "initial";
-                                                                                        }else {
-                                                                                            eBox.parentNode.style.display = 'none';
-                                                                                            eBox.parentNode.classList.add('invisible');
-                                                                                            let subCat = eBox.closest('.subCategories').querySelectorAll('.subCategory');
-                                                                                            let invisibleSubCat = eBox.closest('.subCategories').querySelectorAll('.invisible');
-                                                                                            console.log(`subcat: ${subCat.length} | invisible: ${invisibleSubCat.length}`);
-                                                                                            if(subCat.length === invisibleSubCat.length){
-                                                                                                eBox.closest('.category').style.display = "none";
-                                                                                            } else {
-                                                                                                eBox.closest('.category').style.display = "initial";
-                                                                                            }
-                                                                                        }
-                                                                                    });
                                                                                     return(
                                                                                         <div className={'excursionBack'} key={excursion['excursionCode']}>
                                                                                             <div>
