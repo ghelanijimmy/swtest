@@ -6,7 +6,7 @@ class Filter extends Component {
     constructor(props){
         super(props);
         this.state = {
-            filterCheck: []
+            // filterCheck: []
         }
     }
 
@@ -14,12 +14,17 @@ class Filter extends Component {
         const checkChecked=(id, e)=>{
             var element = e.target.checked;
 
-            var stateFilterArr = this.state.filterCheck;
+            // var stateFilterArr = this.state.filterCheck;
+            var stateFilterArrTwo = this.state;
 
             function filterExists(filterName){
-                return stateFilterArr.some(function(el){
-                    return el['id'] === filterName;
-                })
+                // console.log(Object.keys(stateFilterArrTwo))
+                // return stateFilterArr.some(function(el){
+                //     return el['id'] === filterName;
+                // })
+                if(stateFilterArrTwo.hasOwnProperty(filterName)){
+                    return true
+                }
             }
             addFilter = addFilter.bind(this)
             function addFilter(filterName){
