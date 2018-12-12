@@ -2,13 +2,50 @@ import React, {Component} from 'react';
 
 class Filter extends Component {
 
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            filterCheck: []
+        }
+    }
 
     render(){
         // console.log(this.props.filter);
         const checkChecked=(id, e)=>{
-            console.log(e.target.checked)
-            console.log(id)
+            // console.log(e.target.checked)
+            // console.log(id)
+            var element = e.target.checked;
+
+            var stateFilterArr = this.state.filterCheck;
+
+            function filterExists(filterName){
+                return stateFilterArr.some(function(el){
+                    return el['id'] === filterName;
+                })
+            }
+            addFilter = addFilter.bind(this)
+            function addFilter(filterName){
+                if(filterExists(filterName)){
+                    console.log('exists')
+                }
+                // var filterArr = []
+                // filterArr.push(
+                //     {
+                //         id,
+                //         checked: element
+                //     }
+                // )
+                // console.log(filterArr);
+                this.setState({
+                    filterCheck: [{
+                        id,
+                        checked: element
+                    }]
+                }, ()=>{
+                    console.log(this.state)
+                })
+            }
+            addFilter(id);
         }
         const inputBox=(filter)=>{
             function rafAsync(){
@@ -27,7 +64,7 @@ class Filter extends Component {
             checkElement().then((element)=>{
                 let inputBox = document.getElementById('filterInput');
                 
-                if(inputBox.value == ""){
+                if(inputBox.value === ""){
                     // return(
                     //     'Type to Filter Excursions'
                     // )
@@ -46,47 +83,25 @@ class Filter extends Component {
             //     )
             // }
         }
-        // if(this.props.filter === ""){
-            return(
-                <div className={'filterBox'}>
-                    <input id={'filterInput'} placeholder={'Filter'} onChange={this.props.onFilter} value={this.props.filter}/>
-                    <div id={'filterOutput'}>{inputBox(this.props.filter)}</div>
-                    <div className={'filterCheckBoxes'}>
-                    {
-                        Object.keys(this.props.titles).map((obj, i)=> {
-                            var title = this.props.titles[obj]['categoryName'];
-                            var titleNoSpace = this.props.titles[obj]['categoryName'].replace(/(?:[^a-zA-Z0-9])/g, "");
-                            return(
-                                <span key={titleNoSpace}>
-                                    <input type="checkbox" id={titleNoSpace} name={title} value={title} onChange={(e)=>checkChecked(titleNoSpace, e)} />{title}<br />
-                                </span>
-                            )
-                        })
-                    }
-                    </div>
+        return(
+            <div className={'filterBox'}>
+                <input id={'filterInput'} placeholder={'Filter'} onChange={this.props.onFilter} value={this.props.filter}/>
+                <div id={'filterOutput'}>{inputBox(this.props.filter)}</div>
+                <div className={'filterCheckBoxes'}>
+                {
+                    Object.keys(this.props.titles).map((obj, i)=> {
+                        var title = this.props.titles[obj]['categoryName'];
+                        var titleNoSpace = this.props.titles[obj]['categoryName'].replace(/(?:[^a-zA-Z0-9])/g, "");
+                        return(
+                            <span key={titleNoSpace}>
+                                <input type="checkbox" id={titleNoSpace} name={title} value={title} onChange={(e)=>checkChecked(titleNoSpace, e)} />{title}<br />
+                            </span>
+                        )
+                    })
+                }
                 </div>
-            );
-        // }else {
-        //     return (
-        //         <div className={'filterBox'}>
-        //             <input id={'filterInput'} placeholder={'Filter'} onChange={this.props.onFilter} value={this.props.filter}/>
-        //             <div id={'filterOutput'}><span id={'filterLabel'}>Filtering For: </span>{this.props.filter}</div>
-        //             <div className={'filterCheckBoxes'}>
-        //             {
-        //                 Object.keys(this.props.titles).map((obj, i)=> {
-        //                     var title = this.props.titles[obj]['categoryName'];
-        //                     var titleNoSpace = this.props.titles[obj]['categoryName'].replace(/(?:[^a-zA-Z0-9])/g, "");
-        //                     return(
-        //                         <span>
-        //                             <input type="checkbox" id={titleNoSpace} name={title} value={title} onChange={(e)=>checkChecked(titleNoSpace, e)} />{title}<br />                                    
-        //                         </span>
-        //                     )
-        //                 })
-        //             }
-        //             </div>
-        //         </div>
-        //     )
-        // }
+            </div>
+        );
     }
 }
 
