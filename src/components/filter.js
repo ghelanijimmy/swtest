@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { EFAULT } from 'constants';
 
 class Filter extends Component {
 
@@ -10,10 +11,7 @@ class Filter extends Component {
     }
 
     render(){
-        // console.log(this.props.filter);
         const checkChecked=(id, e)=>{
-            // console.log(e.target.checked)
-            // console.log(id)
             var element = e.target.checked;
 
             var stateFilterArr = this.state.filterCheck;
@@ -28,19 +26,8 @@ class Filter extends Component {
                 if(filterExists(filterName)){
                     console.log('exists')
                 }
-                // var filterArr = []
-                // filterArr.push(
-                //     {
-                //         id,
-                //         checked: element
-                //     }
-                // )
-                // console.log(filterArr);
                 this.setState({
-                    filterCheck: [{
-                        id,
-                        checked: element
-                    }]
+                    [id]: element
                 }, ()=>{
                     console.log(this.state)
                 })
