@@ -189,6 +189,7 @@ section.content {
   box-sizing: border-box;
   padding: 0 100px;
   margin-bottom: 180px;
+  /***FILTER***/
   div.filterBox {
     display: flex;
     flex-wrap: wrap;
@@ -201,9 +202,11 @@ section.content {
     background: $niceGray;
     #filterInput {
       box-sizing: border-box;
+      padding: 1%;
       border: 1px solid #ededed;
       text-align: center;
       padding: 1% 0;
+      box-sizing: border-box;
       margin-top: 1%;
     }
     #filterOutput {
@@ -216,6 +219,9 @@ section.content {
         font-weight: 100;
         color: $white;
       }
+    }
+    .filterCheckBoxes {
+      color: $white;
     }
   }
   div.destinationContent {
