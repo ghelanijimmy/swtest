@@ -227,6 +227,7 @@ section.content {
   box-sizing: border-box;
   padding: 0 100px;
   margin-bottom: 180px;
+  /***FILTER***/
 }
 
 section.content div.filterBox {
@@ -274,6 +275,10 @@ section.content div.filterBox #filterOutput {
 
 section.content div.filterBox #filterOutput #filterLabel {
   font-weight: 100;
+  color: #fff;
+}
+
+section.content div.filterBox .filterCheckBoxes {
   color: #fff;
 }
 

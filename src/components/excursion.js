@@ -132,7 +132,7 @@ class Excursion extends Component {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aliquid amet, cum cupiditate distinctio dolor dolores, error, et exercitationem expedita illo magni minus provident quas qui saepe velit! Autem incidunt maiores minus obcaecati odit quasi suscipit totam vitae?
                         </p>
                     </div>
-                    <Filter onFilter={handleInput} filter={this.state.filter}/>
+                    <Filter onFilter={handleInput} filter={this.state.filter} titles={this.state.excursion}/>
                     <div id={'categories'}>
 
                         {
@@ -140,8 +140,9 @@ class Excursion extends Component {
 
 
                                 var title = this.state.excursion[obj]['categoryName'];
+                                var titleNoSpace = this.state.excursion[obj]['categoryName'].replace(/(?:[^a-zA-Z0-9])/g, "");
                                     return (
-                                        <div key={title} className={'category'}>
+                                        <div key={title} className={`category ${titleNoSpace}`}>
                                             <h2 key={title}>{title}</h2>
                                             <div key={title + i} className={'subCategories'}>
                                                 {
